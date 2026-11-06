@@ -9,7 +9,7 @@ format:
 
 # Introduction
 
-In Chapter 2 of *Text Mining with R: A Tidy Approach*, Julia Silge and David Robinson demonstrate how sentiment lexicons can be joined to tidy text to examine positive and negative language and patterns across Jane Austen's novels. For this project, I plan to reproduce the chapter's main Jane Austen analysis and extend it to H. G. Wells's *The Time Machine*, asking: **How does the emotional tone change over the course of a science-fiction story, and how sensitive are those patterns to the sentiment dictionary used?** I will compare the original chapter's lexicons with an additional literary sentiment dictionary from the R package `syuzhet`.
+In Chapter 2 of *Text Mining with R: A Tidy Approach*, Julia Silge and David Robinson demonstrate how sentiment lexicons can be joined to tidy text to examine positive and negative language and patterns across Jane Austen's novels. For this assignment, I plan to reproduce the chapter's main Jane Austen analysis and extend it to H. G. Wells's *The Time Machine*, asking: **How does the emotional tone change over the course of a science-fiction story, and how sensitive are those patterns to the sentiment dictionary used?** I will compare the original chapter's lexicons with an additional literary sentiment dictionary from the R package `syuzhet`.
 
 # Planned Approach
 
