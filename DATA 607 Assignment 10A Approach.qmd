@@ -1,0 +1,39 @@
+---
+title: "Sentiment Analysis with Text Mining in R: Approach"
+author: "Chanice McKenzie"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+# Introduction
+
+In Chapter 2 of *Text Mining with R: A Tidy Approach*, Julia Silge and David Robinson demonstrate how sentiment lexicons can be joined to tidy text to examine positive and negative language and patterns across Jane Austen's novels. For this project, I plan to reproduce the chapter's main Jane Austen analysis and extend it to H. G. Wells's *The Time Machine*, asking: **How does the emotional tone change over the course of a science-fiction story, and how sensitive are those patterns to the sentiment dictionary used?** I will compare the original chapter's lexicons with an additional literary sentiment dictionary from the R package `syuzhet`.
+
+# Planned Approach
+
+## Reproduce the Chapter 2 Example
+
+I will first work through the [Chapter 2 example](https://www.tidytextmining.com/sentiment), using the `janeaustenr` and `tidytext` packages to organize Austen's text into individual word tokens. I plan to reproduce the example of measuring positive and negative sentiment with the Bing lexicon in successive portions of the novels, then examine the chapter's comparison of Bing, AFINN, and NRC scores for *Pride & Prejudice*. I will use the book's plots and interpretations as a reference when checking that my reproduction behaves as expected.
+
+## Extend the Corpus and Lexicon
+
+For the new corpus, I will use the public-domain novel [*The Time Machine* by H. G. Wells](https://www.gutenberg.org/ebooks/35), available through Project Gutenberg. I plan to retrieve the book using `gutenbergr`, remove non-story metadata if needed, and divide the text into ordered sections so that sentiment can be examined across the narrative rather than reduced to one score. I will apply the Bing, AFINN, and NRC lexicons from the chapter and add the **Syuzhet literary sentiment dictionary**, available through the R package `syuzhet`. This adds a distinct lexicon beyond the three used in Chapter 2.
+
+I will compare sentiment patterns within *The Time Machine* across the dictionaries and discuss how those patterns resemble or differ from the Austen example. A line or bar chart showing sentiment by story segment, with separate panels for each lexicon, should make differences in direction and intensity easier to interpret. I will avoid treating scores from dictionaries with different scales as directly interchangeable.
+
+# Anticipated Data Challenges
+
+A main challenge will be making the two corpora comparable. Austen's novels and Wells's science-fiction narrative differ in length, vocabulary, and subject matter, so I will examine normalized sentiment measures or similarly sized text segments rather than comparing raw sentiment totals alone. Project Gutenberg files may also contain introductory or licensing material that should not be treated as part of the story.
+
+Another concern is **lexicon coverage and context**. Dictionaries may assign different values to the same word or omit specialized vocabulary; a word described as negative may not reflect the tone of its sentence. Single-word approaches can also miss negation, irony, and changes in meaning. I will review a few influential words or passages and clearly explain that the output is an approximation of sentiment rather than a definitive measure of an author's intentions. I will also document any package installation, dictionary download or licensing requirements that could affect reproducibility.
+
+
+# References
+
+Silge, J., & Robinson, D. (2017). *Text Mining with R: A Tidy Approach*. O'Reilly Media. Chapter 2, "Sentiment analysis with tidy data." https://www.tidytextmining.com/sentiment
+
+Wells, H. G. (1895). *The Time Machine*. Project Gutenberg, eBook #35. https://www.gutenberg.org/ebooks/35
+
+Jockers, M. L. *syuzhet*: Extracts Sentiment and Sentiment-Derived Plot Arcs from Text [R package]. https://cran.r-project.org/package=syuzhet
